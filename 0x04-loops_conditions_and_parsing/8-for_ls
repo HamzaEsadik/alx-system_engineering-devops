@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # Write a Bash script that displays
 
-ls | cut -d '-' -f 2
+for item in $(ls)
+do
+	echo "$item" | cut -d '-' -f 2
+done
