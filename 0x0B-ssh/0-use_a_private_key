@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-private_key='~/.ssh/school'
-ssh -i $private_key ubuntu@107.22.143.112
+ssh -i ~/.ssh/school ubuntu@107.22.143.112
