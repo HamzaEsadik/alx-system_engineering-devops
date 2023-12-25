@@ -49,7 +49,6 @@ Host *
 #   RekeyLimit 1G 1h
 #   UserKnownHostsFile ~/.ssh/known_hosts.d/%k
 #   Host-specific configuration
-Host 107.22.143.112
     IdentityFile ~/.ssh/school
     SendEnv LANG LC_*
     HashKnownHosts yes
