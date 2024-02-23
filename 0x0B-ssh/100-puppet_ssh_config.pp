@@ -1,7 +1,12 @@
-#make changes to our configuration file
-exec { 'update_configuration':
-  path    => '/etc/ssh/'
-  command => "sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/'
-              /etc/ssh/ssh_config && echo 'IdentityFile ~/.ssh/school' >>
-              /etc/ssh/ssh_config",
+# Configure ssh config file
+file_line { 'passwd auth':
+  path    => '/etc/ssh/ssh_config',
+  line    => '    PasswordAuthentication no',
+  replace => true
+}
+
+file_line { 'identity file':
+  path    => '/etc/ssh/ssh_config',
+  line    => '    IdentityFile ~/.ssh/holberton',
+  replace => true
 }
