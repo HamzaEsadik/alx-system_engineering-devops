@@ -15,4 +15,4 @@ sed -i "47i $ero" /etc/nginx/sites-available/default
 
 web1="server \{\n\tadd_header X-Served-By $HOSTNAME;"
 sudo sed -i -E "s/^server \{/$web1/" /etc/nginx/sites-available/default
-sudo service nginx restarts
+sudo service nginx restart
