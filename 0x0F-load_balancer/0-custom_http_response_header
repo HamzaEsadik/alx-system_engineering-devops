@@ -12,6 +12,7 @@ sed -i "53i $red" /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 ero="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}"
 sed -i "47i $ero" /etc/nginx/sites-available/default
-web1="\\tadd_header X-Served-By $HOSTNAME;"
-sed -i "24i $web1" /etc/nginx/sites-available/default
+
+web1="server \{\n\tadd_header X-Served-By $HOSTNAME;"
+sudo sed -i -E "s/^server \{/$web1/" /etc/nginx/sites-available/default
 sudo service nginx restarts
