@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Write a Python script that, using this REST API"""
+'''export data in the CSV format'''
 import csv
 import requests
 import sys
