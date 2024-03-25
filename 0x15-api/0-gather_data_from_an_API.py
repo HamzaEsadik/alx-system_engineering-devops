@@ -47,4 +47,4 @@ if __name__ == "__main__":
     print(f'Employee {EMPLOYEE_NAME} is done with tasks \
 ({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):')
     for todo in todos_data:
-        print(todo.get('title'))
+        print(f"\t{todo.get('title')}")
