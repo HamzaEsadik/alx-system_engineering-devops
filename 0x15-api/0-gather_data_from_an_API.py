@@ -12,7 +12,7 @@ if __name__ == "__main__":
         # parse data
         user_data = user_response.json()
         # name
-        EMPLOYEE_NAME = user_data['name']
+        EMPLOYEE_NAME = user_data.get('name')
     except requests.RequestException as e:
         print(e)
 
@@ -45,6 +45,6 @@ if __name__ == "__main__":
 
     # print resaults
     print(f'Employee {EMPLOYEE_NAME} is done with tasks \
-    ({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):')
+({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):')
     for todo in todos_data:
         print(todo['title'])
