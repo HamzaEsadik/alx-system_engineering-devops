@@ -5,14 +5,14 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    """Return the total number of subscribers on a given subreddit"""
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers = {
-        "User-Agent": "Mozilla/5.0"
-    }
-    response = requests.get(url, headers=headers, allow_redirects=False)
-    if response.status_code == 200:
-      results = response.json().get("data")
-      return results.get("subscribers")
-    else:
-      return 0
+    """Reddit Sub Counter."""
+    import requests
+
+    the_results = requests.get("https://www.reddit.com/r/{}/about.json"
+                            .format(subreddit),
+                            headers={"User-Agent": "1-top_ten.py"},
+                            allow_redirects=False)
+    if the_results.status_code >= 300:
+        return 0
+
+    return the_results.json().get("data").get("subscribers")
