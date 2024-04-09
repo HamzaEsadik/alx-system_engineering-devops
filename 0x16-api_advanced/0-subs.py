@@ -4,7 +4,7 @@ import json
 import requests
 
 
-def number_of_subscribers(subreddit):
+def def number_of_subscribers(subreddit):
     user = {"User-Agent": "Hamza_esadik"}
     request = requests.get("https://www.reddit.com/r/{}/about.json"
                            .format(subreddit), headers=user)
